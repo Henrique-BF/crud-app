@@ -17,31 +17,31 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{$product->name}}
+                {{ $product->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description </strong>
-                {{$product->description}}
+                {{ $product->description }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                ${{$product->price}}
+                ${{ $product->price }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Created at: </strong>
-                {{$product->created_at}}
+                {{ $product->created_at->format('d/m/Y') }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Updated at: </strong>
-                {{$product->updated_at}}
+                {{ $product->updated_at->format('d/m/Y') }}
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostRequest;
 
 class ProductController extends Controller
 {
@@ -34,15 +35,12 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required'
-        ]);
+        $request->validated();
 
-        Product::create($request->all());
+        $input = $request->only('name', 'description', 'price');
+        Product::create($input);
 
         return redirect()->route('products.index')
             ->with('success', 'Product created successfully.');
@@ -77,14 +75,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(StorePostRequest $request, Product $product)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required'
-        ]);
-        $product->update($request->all());
+        $request->validated();
+
+        $input = $request->only('name', 'description', 'price');
+        $product->update($input);
 
         return redirect()->route('products.index')
             ->with('success', 'Product updated successfully');

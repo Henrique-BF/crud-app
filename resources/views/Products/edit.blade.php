@@ -12,18 +12,9 @@
         </div>
     </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Error!</strong>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <x-message_error/>
 
-    <form action="{{ route('products.update',$product->id) }}" method="POST">
+    <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -31,21 +22,21 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>
-                    <input type="text" name="name" value="{{$product->name}}" class="form-control"
+                    <input type="text" name="name" value="{{ $product->name }}" class="form-control"
                         placeholder="Enter name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description</strong>
-                    <textarea name="description" value="{{$product->description}}" class="form-control" style="height:150px"
+                    <textarea name="description" value="{{ $product->description }}" class="form-control" style="height:150px"
                         placeholder="Enter description"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Price</strong>
-                    <input type="number" name="price" value="{{$product->price}}" class="form-control"
+                    <input type="number" name="price" value="{{ $product->price }}" class="form-control"
                         placeholder="Put the price">
                         
                 </div>

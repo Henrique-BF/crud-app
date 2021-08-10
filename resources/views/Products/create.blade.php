@@ -11,18 +11,10 @@
             </div>
         </div>
     </div>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Error!</strong> 
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>$error</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form action="{{ route('products.store') }}" method="POST" >
+    
+    <x-message_error/>
+    
+    <form action="{{ route('products.store') }}" method="POST">
         @csrf
 
         <div class="row">
