@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Message_error extends Component
+class MessageError extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Message_error extends Component
      */
     public function render()
     {
-        return view('components.message_error');
+        return view('components.MessageError');
     }
 }

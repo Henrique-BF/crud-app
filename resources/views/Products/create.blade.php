@@ -12,7 +12,7 @@
         </div>
     </div>
     
-    <x-message_error/>
+    <x-MessageError/>
     
     <form action="{{ route('products.store') }}" method="POST">
         @csrf
@@ -27,14 +27,14 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <textarea name="description" class="form-control" style="height:150px"
+                    <textarea name="description" class="form-control" rows="4"
                         placeholder="Enter description"></textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Price:</strong>
-                    <input type="float" name="price" class="form-control" placeholder="Put the price">
+                    <input type="number" min="0" step="0.01" name="price" class="form-control" placeholder="Put the price">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

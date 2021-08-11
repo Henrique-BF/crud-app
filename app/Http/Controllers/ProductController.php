@@ -37,8 +37,6 @@ class ProductController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        $request->validated();
-
         $input = $request->only('name', 'description', 'price');
         Product::create($input);
 
@@ -77,8 +75,6 @@ class ProductController extends Controller
      */
     public function update(StorePostRequest $request, Product $product)
     {
-        $request->validated();
-
         $input = $request->only('name', 'description', 'price');
         $product->update($input);
 
