@@ -7,8 +7,8 @@
                 <h2>Laravel 8 CRUD </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('categories.index') }}" title="Categories">Categories</a>
-                <a class="btn btn-success" href="{{ route('products.create') }}" title="Create a product"> <i class="fas fa-plus-circle"></i></a>
+                <a class="btn btn-primary" href="{{ route('products.index') }}" title="Go back">Products</a>
+                <a class="btn btn-success" href="{{ route('categories.create') }}" title="Create a categorie"> <i class="fas fa-plus-circle"></i></a>
             </div>
         </div>
     </div>
@@ -24,25 +24,23 @@
             <th>No</th>
             <th>Name</th>
             <th>description</th>
-            <th>Price</th>
             <th>Date Created</th>
             <th>Actions</th>
         </tr>
-        @forelse ($products as $product)
+        @forelse ($categories as $categorie)
             <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->description }}</td>
-                <td>{{ $product->price }}</td>
-                <td>{{ $product->created_at->format('d/m/Y') }}</td>
+                <td>{{ $categorie->id }}</td>
+                <td>{{ $categorie->name }}</td>
+                <td>{{ $categorie->description }}</td>
+                <td>{{ $categorie->created_at->format('d/m/Y') }}</td>
                 <td>
-                    <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                    <form action="{{ route('categorie.destroy', $categorie->id) }}" method="POST">
 
-                        <a href="{{ route('products.show', $product->id) }}" title="show">
+                        <a href="{{ route('categorie.show', $categorie->id) }}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{ route('products.edit', $product->id) }}" title="edit">
+                        <a href="{{ route('categorie.edit', $categorie->id) }}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
@@ -56,10 +54,10 @@
                 </td>
             </tr>
         @empty
-            <p>There is no products, try register the first one.</p>
+            <p>There is no categories, try register the first one.</p>
         @endforelse
     </table>
     <div>
-        {!! $products->links() !!}
+        {!! $categories->links() !!}
     </div>
 @endsection
