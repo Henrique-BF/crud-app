@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <x-MessageError/>
+    <x-message-error/>
 
     <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf

@@ -23,6 +23,6 @@ class MessageError extends Component
      */
     public function render()
     {
-        return view('components.MessageError');
+        return view('components.message-error');
     }
 }
