@@ -38,10 +38,10 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        $imput = $request->only('name', 'description');
-        Category::create($imput);
+        $input = $request->only('name', 'description');
+        Category::create($input);
 
-        return redirect()->route('categories.index')->wich('sucess', 'Category created sucefull.');
+        return redirect()->route('categories.index')->with('sucess', 'Category created sucefull.');
     }
 
     /**
@@ -63,7 +63,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('categories.edit');
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -75,10 +75,10 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $imput = $request->only('name', 'description');
-        $category->update($imput);
+        $input = $request->only('name', 'description');
+        $category->update($input);
 
-        return redirect()->route('categories.index')->wich('sucess', 'Category updated sucefull.');
+        return redirect()->route('categories.index')->with('sucess', 'Category updated sucefull.');
     }
 
     /**

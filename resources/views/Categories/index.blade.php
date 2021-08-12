@@ -8,7 +8,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('products.index') }}" title="Go back">Products</a>
-                <a class="btn btn-success" href="{{ route('categories.create') }}" title="Create a categorie"> <i class="fas fa-plus-circle"></i></a>
+                <a class="btn btn-success" href="{{ route('categories.create') }}" title="Create a category"><i class="fas fa-plus-circle"></i></a>
             </div>
         </div>
     </div>
@@ -27,20 +27,20 @@
             <th>Date Created</th>
             <th>Actions</th>
         </tr>
-        @forelse ($categories as $categorie)
+        @forelse ($categories as $category)
             <tr>
-                <td>{{ $categorie->id }}</td>
-                <td>{{ $categorie->name }}</td>
-                <td>{{ $categorie->description }}</td>
-                <td>{{ $categorie->created_at->format('d/m/Y') }}</td>
+                <td>{{ $category->id }}</td>
+                <td>{{ $category->name }}</td>
+                <td>{{ $category->description }}</td>
+                <td>{{ $category->created_at->format('d/m/Y') }}</td>
                 <td>
-                    <form action="{{ route('categorie.destroy', $categorie->id) }}" method="POST">
+                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
 
-                        <a href="{{ route('categorie.show', $categorie->id) }}" title="show">
+                        <a href="{{ route('categories.show', $category->id) }}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{ route('categorie.edit', $categorie->id) }}" title="edit">
+                        <a href="{{ route('categories.edit', $category->id) }}" title="edit">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
