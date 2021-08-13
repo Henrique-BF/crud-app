@@ -32,6 +32,16 @@
                 ${{ $product->price }}
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Categories:</strong>
+                @foreach ($product->categories as $category)
+                    {{ $category->name }}
+                @endforeach
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Created at: </strong>

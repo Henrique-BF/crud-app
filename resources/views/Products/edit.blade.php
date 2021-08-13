@@ -29,8 +29,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description</strong>
-                    <textarea name="description" value="{{ $product->description }}" class="form-control" rows="4"
-                        placeholder="Enter description"></textarea>
+                    <textarea name="description" class="form-control" rows="4"
+                        placeholder="Enter description">{{ $product->description }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -38,12 +38,19 @@
                     <strong>Price</strong>
                     <input type="number" min="0" step="0.01" name="price" value="{{ $product->price }}" class="form-control"
                         placeholder="Put the price">
-                        
                 </div>
             </div>
+
+            <select name="categories_ids[]" class="select" multiple data-placeholder="Begin typing a name to filter..." multiple class="chosen-select">
+                @foreach($all_categories as $category)
+                    <option value="{{ $category->id }}" {{ $product->categories->contains($category->id) ? 'selected' : ''}}>{{ $category->name }}</option>
+                @endforeach
+            </select>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
+
         </div>
 
     </form>

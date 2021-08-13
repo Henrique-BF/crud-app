@@ -21,4 +21,12 @@ class Product extends Model
         'price',
         'created_at'
     ];
+
+    /**
+     * The categories that belong to the product.
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }

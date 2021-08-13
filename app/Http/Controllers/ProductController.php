@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -64,7 +65,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        $all_categories = Category::get(['name', 'id']); // to populate all roles
+        return view('products.edit', compact('product', 'all_categories'));
     }
 
     /**
@@ -78,6 +80,8 @@ class ProductController extends Controller
     {
         $input = $request->only('name', 'description', 'price');
         $product->update($input);
+
+        $product->categories()->sync($request->input('categories_ids'));
 
         return redirect()->route('products.index')
             ->with('success', 'Product updated successfully');
