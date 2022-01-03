@@ -33,3 +33,26 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+    - name: Coverage monitor
+      # You may pin to the exact commit or the version.
+      # uses: slavcodev/coverage-monitor-action@e460aba730127b1d898988d1c41b1077e93ba5ad
+      uses: slavcodev/coverage-monitor-action@1.2.0
+      with:
+        # The GITHUB_TOKEN secret.
+        github_token: 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
+        # Path to Clover XML file.
+        clover_file: crud-app/
+        # Whether check the coverage thresholds.
+        check: true
+        # Whether comment the coverage report.
+        comment: true
+        # Mark the build as unstable when coverage is less than this threshold.
+        threshold_alert: 50
+        # Warning when coverage is less than this threshold.
+        threshold_warning: 80
+        # A string label to differentiate this status from the status of other systems.
+        status_context: Coverage Report
+        # A string label to differentiate the comment posted by this action.
+        comment_context: Coverage Report
+        # A mode for comments, supported: `replace`, `update` or `insert`.
+        comment_mode: replace
