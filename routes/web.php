@@ -22,7 +22,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('Olá mundo.');
 });
-
+Route::get('/home-home', function () {
+    return view('Olá novo mundo.');
+});
 
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
