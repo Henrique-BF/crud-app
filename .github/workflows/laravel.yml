@@ -33,9 +33,7 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-    - name: Coverage monitor
-      # You may pin to the exact commit or the version.
-      # uses: slavcodev/coverage-monitor-action@e460aba730127b1d898988d1c41b1077e93ba5ad
+    - name: Monitor coverage
       uses: slavcodev/coverage-monitor-action@1.2.0
       with:
         # The GITHUB_TOKEN secret.
@@ -44,3 +42,4 @@ jobs:
         clover_file: "logs/clover.xml"
         threshold_alert: 10
         threshold_warning: 50
+    
