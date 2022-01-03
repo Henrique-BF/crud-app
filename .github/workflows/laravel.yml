@@ -41,7 +41,7 @@ jobs:
         # The GITHUB_TOKEN secret.
         github_token: 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
         # Path to Clover XML file.
-        clover_file: crud-app/
+        clover_file: "logs/clover.xml"
         # Whether check the coverage thresholds.
         check: true
         # Whether comment the coverage report.
