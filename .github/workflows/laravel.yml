@@ -37,6 +37,3 @@ jobs:
       uses: ewjoachim/coverage-comment-action@v1
       with:
         GITHUB_TOKEN: ${{ github.token }}
-
-        # Path and filename of the coverage XML file to analyze.
-        COVERAGE_FILE: "coverage.xml"

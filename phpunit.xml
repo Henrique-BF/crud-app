@@ -17,9 +17,7 @@
             <directory suffix=".php">./app</directory>
         </include>
         <report>
-            
-            <xml outputDirectory="xml-coverage"/>
-            
+            <xml outputDirectory="xml-coverage"/> 
         </report>
     </coverage>
     <php>
