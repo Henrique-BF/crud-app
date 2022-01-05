@@ -37,7 +37,17 @@ jobs:
       uses: ewjoachim/coverage-comment-action@v1
       with:
         GITHUB_TOKEN: ${{ github.token }}
+        # Path and filename of the coverage XML file to analyze.
+        COVERAGE_FILE: "coverage.xml"
+
+        # Whether or not a badge will be generated and stored.
+        BADGE_ENABLED: "true"
+
+        # Name of the json file containing badge informations stored in the repo wiki.
+        BADGE_FILENAME: coverage-comment-badge.json
+
         # If the coverage percentage is above or equal to this value, the badge will be green.
-        MINIMUM_GREEN: 100
+        MINIMUM_GREEN: 80
+
         # Same with orange. Below is red.
-        MINIMUM_ORANGE: 70
+        MINIMUM_ORANGE: 50
