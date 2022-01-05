@@ -17,9 +17,9 @@
             <directory suffix=".php">./app</directory>
         </include>
         <report>
-            <html outputDirectory="reports/coverage"/>
+            
             <xml outputDirectory="reports/xml-coverage"/>
-            <clover outputFile="reports/coverage.xml"/>
+            
         </report>
     </coverage>
     <php>

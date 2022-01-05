@@ -39,4 +39,4 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
 
         # Path and filename of the coverage XML file to analyze.
-        COVERAGE_FILE: "reports/coverage.xml"
+        COVERAGE_FILE: "coverage.xml"
