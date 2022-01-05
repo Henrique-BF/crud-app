@@ -18,7 +18,7 @@
         </include>
         <report>
             
-            <xml outputDirectory="reports/xml-coverage"/>
+            <xml outputDirectory="xml-coverage"/>
             
         </report>
     </coverage>
