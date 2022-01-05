@@ -37,3 +37,7 @@ jobs:
       uses: ewjoachim/coverage-comment-action@v1
       with:
         GITHUB_TOKEN: ${{ github.token }}
+        # If the coverage percentage is above or equal to this value, the badge will be green.
+        MINIMUM_GREEN: 100
+        # Same with orange. Below is red.
+        MINIMUM_ORANGE: 70
