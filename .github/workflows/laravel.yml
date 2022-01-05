@@ -33,9 +33,10 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-    - name: test coverage
-      run: vendor/bin/phpunit --coverage-html reports/
     - name: Display coverage
       uses: ewjoachim/coverage-comment-action@v1
       with:
         GITHUB_TOKEN: ${{ github.token }}
+
+        # Path and filename of the coverage XML file to analyze.
+        COVERAGE_FILE: "reports/coverage.xml"
