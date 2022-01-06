@@ -58,8 +58,3 @@ jobs:
         clover_file: "logs/clover.xml"
         threshold_alert: 10
         threshold_warning: 50
-    - name: Codacy Coverage Reporter
-      uses: codacy/codacy-coverage-reporter-action@v1.2.0
-      with:
-        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        coverage-reports: coverage.xml
