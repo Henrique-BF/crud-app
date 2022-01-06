@@ -18,6 +18,7 @@
         </include>
         <report>
             <cobertura outputFile="coverage.xml"/>
+            <clover outputFile="logs/clover.xml"/>
         </report>
     </coverage>
     <php>
